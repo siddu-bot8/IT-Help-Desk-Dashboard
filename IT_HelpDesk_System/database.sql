@@ -1,0 +1,9 @@
+CREATE DATABASE helpdesk;
+USE helpdesk;
+CREATE TABLE tickets(
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+issue TEXT,
+priority VARCHAR(20),
+status VARCHAR(20)
+);

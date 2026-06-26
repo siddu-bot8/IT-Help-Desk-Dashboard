@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><head><title>Dashboard</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<h2>IT Help Desk Dashboard</h2>
+<a href="/add">Raise Ticket</a>
+<table border="1">
+<tr><th>ID</th><th>Name</th><th>Issue</th><th>Priority</th><th>Status</th><th>Update</th></tr>
+{% for t in tickets %}
+<tr>
+<td>{{t.id}}</td><td>{{t.name}}</td><td>{{t.issue}}</td><td>{{t.priority}}</td><td>{{t.status}}</td>
+<td><form action="/update/{{t.id}}" method="post">
+<select name="status">
+<option>Open</option><option>In Progress</option><option>Resolved</option>
+</select><button>Save</button></form></td>
+</tr>
+{% endfor %}
+</table>
+</body></html>
